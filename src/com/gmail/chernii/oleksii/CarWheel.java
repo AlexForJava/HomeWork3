@@ -14,4 +14,15 @@ public class CarWheel {
         this.state = state;
     }
 
+    public void replaceWheel() {
+        this.state = 1.0;
+    }
+
+    public void changeStateOn(double stateDiff) {
+        if (stateDiff > 1. && stateDiff < 0.) {
+            return;
+        }
+        this.state = (this.state - stateDiff > 0) ? (this.state - stateDiff) : 0.;
+    }
+
 }
