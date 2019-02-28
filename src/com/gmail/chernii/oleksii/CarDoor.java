@@ -16,4 +16,15 @@ public class CarDoor {
         this.doorOpen = doorOpen;
         this.windowOpen = windowOpen;
     }
+    public void openDoor() {
+        this.doorOpen = true;
+    }
+
+    public void closeDoor() {
+        this.doorOpen = false;
+    }
+
+    public void openCloseDoor() {
+        this.doorOpen = (this.doorOpen) ? false : true;
+    }
 }
