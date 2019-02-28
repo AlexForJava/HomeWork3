@@ -24,5 +24,11 @@ public class CarWheel {
         }
         this.state = (this.state - stateDiff > 0) ? (this.state - stateDiff) : 0.;
     }
+    public double getState() {
+        return this.state;
+    }
 
+    public void print() {
+        System.out.println("=== Wheel state = " + state);
+    }
 }
