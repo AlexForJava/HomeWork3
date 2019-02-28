@@ -52,6 +52,7 @@ public class Car {
         }
         this.passengers++;
     }
+
     public void dropPassanger() {
         if (this.passengers > 0) {
             this.passengers--;
@@ -75,5 +76,55 @@ public class Car {
             return null;
         }
         return carWheels[index];
+    }
+
+    public CarWheel[] dropWheels() {
+        CarWheel[] temp = this.carWheels;
+        this.carWheels = null;
+        return temp;
+    }
+
+    public void setWheels(int wheelAmount) {
+        CarWheel[] temp = new CarWheel[this.carWheels.length + wheelAmount];
+        for (int i = 0; i < temp.length; i++) {
+            if (i < this.carWheels.length) {
+                temp[i] = this.carWheels[i];
+            } else {
+                temp[i] = new CarWheel(1.0);
+            }
+        }
+        this.carWheels = temp;
+    }
+
+    public double maxPossibleSpeed() {
+        if (this.passengers == 0 || this.produceDate == null) {
+            return 0;
+        }
+        return this.maxSpeed * maxErasedWheel();
+    }
+
+    private double maxErasedWheel() {
+        double temp = carWheels[0].getState();
+        for (int i = 0; i < this.carWheels.length; i++) {
+            temp = (temp < this.carWheels[i].getState()) ? temp : this.carWheels[i].getState();
+        }
+        return temp;
+    }
+
+    public void print() {
+        System.out.println("Produce date = " + this.produceDate);
+        System.out.println("Engine type = " + this.engineType);
+        System.out.println("Max speed = " + this.maxSpeed);
+        System.out.println("Acceleration time = " + this.accelerationTime);
+        System.out.println("Passenger capacity = " + this.passengerCapacity);
+        System.out.println("There're " + passengers + " in the car");
+        System.out.println("Car speed = " + this.speed);
+        for (CarWheel carWheel : this.carWheels) {
+            carWheel.print();
+        }
+        for (CarDoor carDoor : this.carDoors) {
+            carDoor.print();
+        }
+        System.out.println("Max possible car speed " + maxPossibleSpeed());
     }
 }
