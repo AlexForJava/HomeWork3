@@ -52,4 +52,28 @@ public class Car {
         }
         this.passengers++;
     }
+    public void dropPassanger() {
+        if (this.passengers > 0) {
+            this.passengers--;
+        }
+    }
+
+    public void dropAllPassangers() {
+        this.passengers = 0;
+        this.speed = 0;
+    }
+
+    public CarDoor getDoor(int index) {
+        if (index < 0 && index > this.carDoors.length - 1) {
+            return null;
+        }
+        return carDoors[index];
+    }
+
+    public CarWheel getWheel(int index) {
+        if (index < 0 && index > this.carWheels.length - 1) {
+            return null;
+        }
+        return carWheels[index];
+    }
 }
