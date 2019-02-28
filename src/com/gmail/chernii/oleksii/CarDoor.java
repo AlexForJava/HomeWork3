@@ -27,4 +27,20 @@ public class CarDoor {
     public void openCloseDoor() {
         this.doorOpen = (this.doorOpen) ? false : true;
     }
+    public void openWindow() {
+        this.windowOpen = true;
+    }
+
+    public void closeWindow() {
+        this.windowOpen = false;
+    }
+
+    public void openCloseWindow() {
+        this.windowOpen = (this.windowOpen) ? false : true;
+    }
+
+    public void print() {
+        System.out.println("== Door - " + ((doorOpen) ? "opened" : "closed"));
+        System.out.println("== Window - " + ((windowOpen) ? "opened" : "closed"));
+    }
 }
