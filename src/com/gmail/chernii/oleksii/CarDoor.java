@@ -10,9 +10,9 @@ public class CarDoor {
     public CarDoor() {
     }
 
-    public CarDoor(boolean doorOpen, boolean windowOpen) {
-        this.isDoorOpen = doorOpen;
-        this.isWindowOpen = windowOpen;
+    public CarDoor(boolean isDoorOpen, boolean isWindowOpen) {
+        this.isDoorOpen = isDoorOpen;
+        this.isWindowOpen = isWindowOpen;
     }
     public void openDoor() {
         this.isDoorOpen = true;
