@@ -8,8 +8,6 @@ public class CarDoor {
     private boolean isWindowOpen;
 
     public CarDoor() {
-        this.isDoorOpen = false;
-        this.isWindowOpen = false;
     }
 
     public CarDoor(boolean doorOpen, boolean windowOpen) {
