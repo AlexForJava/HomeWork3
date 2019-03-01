@@ -18,7 +18,7 @@ public class Car {
     private CarDoor[] carDoors;
 
     public Car() {
-        this.produceDate = null;
+        this.produceDate = LocalDate.of(1992, 5, 31);
     }
 
     public Car(LocalDate produceDate) {
